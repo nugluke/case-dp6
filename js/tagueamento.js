@@ -9,16 +9,16 @@ const sendTagEvent = (event) => {
 
 const addSendTagEvent = (el) => {
     const eventType = (el.getAttribute('eventType'));
-    el.addEventListener(eventType , sendTagEvent, false);
-    
+    el.addEventListener(eventType, sendTagEvent, false);
+
 }
 
 const appendListenerToElements = () => {
     const elementsToTag = document.querySelectorAll(`[${MONITORING_MARKER}]`)
     elementsToTag.forEach((el) => addSendTagEvent(el))
-    
+
 }
 
-window.onload = function() {
+window.onload = function () {
     appendListenerToElements()
-  };
+};
